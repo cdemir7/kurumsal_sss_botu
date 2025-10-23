@@ -1,0 +1,17 @@
+Sıkça Sorulan Sorular - Genel Bilgiler
+
+Üyelik
+-------
+S: Üyelik ücretli mi?
+C: Standart üyelik tamamen ücretsizdir. Premium özellikler için aylık veya yıllık abonelik seçeneklerimiz bulunmaktadır.
+
+S: Üyelik avantajları nelerdir?
+C: Üyelerimiz özel indirimlerden, erken erişim fırsatlarından ve kişiselleştirilmiş içeriklerden faydalanabilir.
+
+Güvenlik
+--------
+S: Kişisel verilerim güvende mi?
+C: Evet, kişisel verileriniz güncel güvenlik protokolleri ve şifreleme yöntemleri ile korunmaktadır.
+
+S: Ödeme bilgileri nasıl saklanıyor?
+C: Ödeme bilgileriniz PCI-DSS standartlarına uygun olarak güvenli bir şekilde saklanmaktadır.

@@ -1,0 +1,12 @@
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+
+indexing:
+  chunk_size: 600           # karakter bazlı basit parça boyutu
+  chunk_overlap: 120        # parçalar arası örtüşme
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  normalize_embeddings: true
+  faiss_index_path: "data/processed/index.faiss"
+  meta_path: "data/processed/index_meta.json"
+  chunks_path: "data/processed/chunks.jsonl"
