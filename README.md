@@ -6,20 +6,13 @@ Bu repo, Markdown/TXT SSS dokümanlarından **RAG tabanlı** kısa ve atıflı c
 ```
 project-template/
 ├─ data/
-│ ├─ externa/
 │ ├─ processed/
 │ └─ raw/
-├─ notebooks/
-│ └─ eda.ipynb
 ├─ src/
 │ ├─ data_processing/
 │ │ └─ make_dataset.py
 │ ├─ models/
-│ │ ├─ predict_model.py
-│ │ └─ train_model.py # (Kolay projede kullanılmıyor)
-│ └─ init.py
-├─ outputs/
-│ └─ models/
+│ │ └─ predict_model.py
 ├─ configs/
 │ └─ config.yaml
 ├─ tests/
