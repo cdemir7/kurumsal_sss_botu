@@ -6,3 +6,4 @@ pandas
 faiss-cpu>=1.7.4
 sentence-transformers>=2.2.2
 openai
+pytest>=7.0.0

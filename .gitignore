@@ -4,3 +4,4 @@ data/
 src/__pycache__
 src/data_processing/__pycache__
 src/models/__pycache__
+tests/__pycache__

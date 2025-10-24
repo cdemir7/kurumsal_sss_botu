@@ -1,7 +1,15 @@
 # main.py
 import argparse
-from src.data_processing.make_dataset import run_build_index
-from src.models.predict_model import RAGPredictor
+import sys, io
+
+def _ensure_utf8_stdout():
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        try:
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        except Exception:
+            pass
 
 def main():
     parser = argparse.ArgumentParser(description="Kolay RAG CLI")
@@ -18,8 +26,12 @@ def main():
     args = parser.parse_args()
 
     if args.cmd == "build-index":
+        from src.data_processing.make_dataset import run_build_index
         run_build_index(args.config)
+
     elif args.cmd == "query":
+        from src.models.predict_model import RAGPredictor
+        _ensure_utf8_stdout()  # <-- eklendi
         rag = RAGPredictor(args.config)
         print(rag.answer(args.question, top_k=args.k))
 
