@@ -10,3 +10,11 @@ indexing:
   faiss_index_path: "data/processed/index.faiss"
   meta_path: "data/processed/index_meta.json"
   chunks_path: "data/processed/chunks.jsonl"
+
+retrieval:
+  top_k: 5           # sorgu başına kaç parça getirilecek
+
+answer:
+  mode: "extractive" # "extractive" (LLM yok) veya "llm" (LLM ile üret)
+  max_passages: 4    # cevaba kaç pasaj koyulsun (kısıtlama)
+  openai_model: "gpt-4o-mini"  # mode=llm ise kullanılacak model
