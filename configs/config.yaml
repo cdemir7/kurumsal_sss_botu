@@ -3,8 +3,8 @@ data:
   processed_dir: "data/processed"
 
 indexing:
-  chunk_size: 600           # karakter bazlı basit parça boyutu
-  chunk_overlap: 120        # parçalar arası örtüşme
+  chunk_size: 400           # karakter bazlı basit parça boyutu
+  chunk_overlap: 80        # parçalar arası örtüşme
   embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
   normalize_embeddings: true
   faiss_index_path: "data/processed/index.faiss"
@@ -12,9 +12,14 @@ indexing:
   chunks_path: "data/processed/chunks.jsonl"
 
 retrieval:
-  top_k: 5           # sorgu başına kaç parça getirilecek
+  top_k: 3           # sorgu başına kaç parça getirilecek
+  min_score: 0.40     # en üst eşleşme bu eşikten düşükse "bağlamda bulunamadı" de
+  use_mmr: true       # küçük doküman setlerinde tekrarları azaltır
+  mmr_lambda: 0.5     # 0.0=çeşitlilik, 1.0=saf benzerlik
 
 answer:
   mode: "extractive" # "extractive" (LLM yok) veya "llm" (LLM ile üret)
   max_passages: 4    # cevaba kaç pasaj koyulsun (kısıtlama)
   openai_model: "gpt-4o-mini"  # mode=llm ise kullanılacak model
+  extractive_strategy: "faq_or_sentences"  # önce S:/C: yakala, yoksa cümle seç
+  max_sentences: 1           # çıktıda en fazla kaç cümle olsun
